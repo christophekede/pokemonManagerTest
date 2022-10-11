@@ -11,7 +11,6 @@ export const  fetchAllPokemons = async ():Promise<Array<IPokemon>>=>{
 }
 
 export const  addPokemon = async (pokemon: IPokemon):Promise<any> => {
-    console.log(pokemon, "services")
    const response = await fetch(API_POKEMON_URL, {
      method: 'POST', body: JSON.stringify(pokemon),
      headers: {

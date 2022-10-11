@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { BannerError} from "../components/banners/BannerError";
 import { ShowCard } from "../components/pokemon/ShowCard";
+import { SERVER_STOP } from "../helpers/errorsMessages";
 import { IPokemon } from "../interfaces/pokemon.interfaces";
 import { fetchAllPokemons } from "../services/pokemon";
 
 export const Home = (): JSX.Element => {
   const [pokemons, setpokemons] = useState<Array<IPokemon>>([]);
+  const [errorMsg, setErrorMsg] = useState<string>("")
 
   useEffect(() => {
-    fetchAllPokemons().then((data) => setpokemons(data));
+    fetchAllPokemons().then((data) => setpokemons(data)).catch(err=>setErrorMsg(SERVER_STOP))
   }, []);
 
   return (
@@ -18,7 +21,7 @@ export const Home = (): JSX.Element => {
           Ajouter un pokémon
         </button>
       </Link>
-      <ShowCard pokemons={pokemons} />
+      {errorMsg.length>0 ? <BannerError msg={errorMsg}/>: <ShowCard pokemons={pokemons} />}
     </div>
   );
 };

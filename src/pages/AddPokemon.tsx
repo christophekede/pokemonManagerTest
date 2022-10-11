@@ -1,9 +1,10 @@
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
-import { BannerFormError } from "../components/banners/BannerFormError";
+import { BannerError } from "../components/banners/BannerError";
 import { AddForm } from "../components/pokemon/AddForm";
 import { IPokemon } from "../interfaces/pokemon.interfaces";
 import { addPokemon } from "../services/pokemon";
 import {useNavigate} from 'react-router-dom';
+import { SERVER_STOP } from "../helpers/errorsMessages";
 
 export const AddPokemon = (): JSX.Element => {
 
@@ -41,8 +42,13 @@ export const AddPokemon = (): JSX.Element => {
         setErrorMsg("Taille et Poids doivent être des nombres!")
         return 
     }
-    const response = await addPokemon(pokemon)
-    response.status === 201 ? backToHome() : setErrorMsg("Erreur lors de l'enregistrement ")
+    try {
+        const response = await addPokemon(pokemon)
+        response.status === 201 ? backToHome() : setErrorMsg("Erreur lors de l'enregistrement ")
+    } catch (error) {
+        setErrorMsg(SERVER_STOP)
+    }
+  
    
    }
 
@@ -50,7 +56,7 @@ export const AddPokemon = (): JSX.Element => {
   return (
     <>
       <AddForm handleChange={handleChange} submit={submit}/>
-      {errorMsg.length !== 0 && <BannerFormError  msg={errorMsg}/>}
+      {errorMsg.length !== 0 && <BannerError  msg={errorMsg}/>}
     </>
   );
 };

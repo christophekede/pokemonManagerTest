@@ -1,0 +1,1 @@
+export const SERVER_STOP = "SERVEUR NON DISPONIBLE"
