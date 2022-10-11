@@ -1,8 +1,8 @@
+import { i18nType } from "../../helpers/i18n";
 import { IPokemon } from "../../interfaces/pokemon.interfaces"
 
 
 type PokemonCardProps = { pokemon: IPokemon }; /* could also use interface */
-const i18nType = {"electricity": "électricité", "fire": "feu", "ice": "glace", "wind": "vent"}
 
 const PokemonCard = ({ pokemon }: PokemonCardProps): JSX.Element => {
   const { name, description, imageUrl, size, weight, type } = pokemon;

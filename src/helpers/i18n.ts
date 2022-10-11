@@ -1,0 +1,1 @@
+export const i18nType = {"electricity": "électricité", "fire": "feu", "ice": "glace", "wind": "vent"}
