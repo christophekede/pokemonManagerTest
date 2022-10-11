@@ -11,6 +11,7 @@ export const AddPokemon = (): JSX.Element => {
   const navigator = useNavigate();
     
   const [pokemon, setPokemon] = useState<IPokemon>({
+    id:Math.floor(Math.random() * 500),
     name: "",
     description: "",
     imageUrl: "",

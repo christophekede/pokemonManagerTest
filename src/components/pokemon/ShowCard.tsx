@@ -6,7 +6,7 @@ type ShowCardProps = { pokemons: IPokemon[] };
 export const ShowCard = ({pokemons}:ShowCardProps):JSX.Element  =>{
   const mapPokemons = (pokemons: Array<IPokemon>) =>
     pokemons.map((pokemon: IPokemon) => (
-      <PokemonCard key={pokemon.name} pokemon={pokemon} />
+      <PokemonCard key={pokemon.id} pokemon={pokemon} />
     ));
 
   return (

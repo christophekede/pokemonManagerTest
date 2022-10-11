@@ -8,6 +8,7 @@ import { i18nType } from '../../helpers/i18n';
 describe('PokemonCard', () => {
     
     let pika:IPokemon = {
+         "id":1,
         "name": "Pikachu",
         "description": "Plus la puissance électrique de Pikachu est élevée, plus les poches de ses joues sont extensibles.",
         "imageUrl": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
