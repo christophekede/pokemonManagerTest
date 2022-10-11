@@ -17,15 +17,6 @@
       "size": 170,
       "weight": 90.5,
       "type": "fire"
-    },
-    {
-      "id": 74,
-      "name": "ee",
-      "description": "eeee",
-      "imageUrl": "eee",
-      "size": "18",
-      "weight": "156.0",
-      "type": "ice"
     }
   ]
 }
