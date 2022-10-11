@@ -1,6 +1,5 @@
 import { ChangeEventHandler, FormEventHandler } from "react";
 import { Link } from "react-router-dom";
-import { IPokemon } from "../../interfaces/pokemon.interfaces";
 
 type AddPokemonProps = { submit:FormEventHandler<HTMLFormElement> , handleChange:ChangeEventHandler<HTMLInputElement> & ChangeEventHandler<HTMLTextAreaElement> | undefined}
 

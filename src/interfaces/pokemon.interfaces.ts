@@ -4,6 +4,6 @@ export interface IPokemon {
     imageUrl:string;
     size:number;
     weight:number;
-    type : string
+    type : "electricity" | "fire" | "ice" | "wind"
 }
 

@@ -4,7 +4,7 @@ import PokemonCard from "./PokemonCard";
 type ShowCardProps = { pokemons: IPokemon[] }; 
 
 export const ShowCard = ({pokemons}:ShowCardProps):JSX.Element  =>{
-  const mapPokemons = (pokemons: any) =>
+  const mapPokemons = (pokemons: Array<IPokemon>) =>
     pokemons.map((pokemon: IPokemon) => (
       <PokemonCard key={pokemon.name} pokemon={pokemon} />
     ));

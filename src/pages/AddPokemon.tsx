@@ -16,7 +16,7 @@ export const AddPokemon = (): JSX.Element => {
     imageUrl: "",
     size: 0,
     weight: 0,
-    type: "",
+    type: "electricity",
   });
 
   const [errorMsg, setErrorMsg] = useState("");
@@ -26,7 +26,6 @@ export const AddPokemon = (): JSX.Element => {
         ChangeEventHandler<HTMLInputElement>)
  = (event) => {
     const target = event.target as HTMLTextAreaElement;
-    console.log(target.name, "name")
     setErrorMsg("")
     setPokemon({ ...pokemon, [target.name]: target.value });
   };
